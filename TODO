@@ -2,3 +2,8 @@
 		affecting the keyboard grab, see scrot -s for example)
 - add updategeom() hook for external tools like dzen
 - consider onscreenkeyboard hooks for tablet deployment
+
+Wojtek's TODO
+- separate selfrestart into a header and source file
+- make dwm save the positons of windows so when restarted they open in the same place
+- run certain programs on startup

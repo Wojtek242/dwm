@@ -25,7 +25,7 @@ static const char *colors[SchemeLast][3]      = {
 static const char lockbg[] = "/usr/share/kde4/apps/ksplash/Themes/joy/1920x1080/background.png";
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -44,8 +44,8 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[]",      tile },    /* first entry is default */
+	{ "[]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
