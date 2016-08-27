@@ -1596,6 +1596,9 @@ setup(void)
 	XSelectInput(dpy, root, wa.event_mask);
 	grabkeys();
 	focus(NULL);
+
+	/* get path to executable */
+	dwm_path[0] = get_dwm_path();
 }
 
 
