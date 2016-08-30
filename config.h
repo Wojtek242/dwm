@@ -22,7 +22,7 @@ static const char *colors[SchemeLast][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -32,8 +32,7 @@ static const Rule rules[] = {
 	/* class             instance       title       tags mask     isfloating   monitor */
 	{ "Gimp",            NULL,          NULL,       0,            1,           -1 },
 	{ "Emacs",           NULL,          NULL,       1 << 1,       0,           -1 },
-	{ "tabbed",          "tabbed-surf", NULL,       1 << 2,       0,           -1 },
-	{ "vivaldi-stable",  NULL,          NULL,       1 << 3,       0,           -1 },
+	{ "vivaldi-stable",  NULL,          NULL,       1 << 2,       0,           -1 },
 };
 
 /* layout(s) */
