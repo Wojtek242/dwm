@@ -208,6 +208,7 @@ static void seturgent(Client *c, int urg);
 static void showhide(Client *c);
 static void sigchld(int unused);
 static void spawn(const Arg *arg);
+static void spawnmultiple(const Arg *arg);
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void tile(Monitor *);
@@ -1656,6 +1657,19 @@ spawn(const Arg *arg)
 		perror(" failed");
 		exit(EXIT_SUCCESS);
 	}
+}
+
+void
+spawnmultiple(const Arg *arg)
+{
+  unsigned int n;
+  char ***cmds = (char ***)arg->v;
+
+  for (n = 0; cmds[n] != NULL; n++)
+    {
+      Arg spawn_arg = {.v = cmds[n] };
+      spawn(&spawn_arg);
+    }
 }
 
 void

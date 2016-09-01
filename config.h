@@ -65,11 +65,14 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *lockcmd[]  = { "lock", NULL };
 static const char *surfcmd[]  = { "tsurf", NULL };
 /* Media controls */
+static const char *unmutecmd[]  = { "pactl", "set-sink-mute", "0", "false", NULL };
 static const char *volupcmd[]   = { "pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *voldncmd[]   = { "pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *mutecmd[]    = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 static const char *micmutecmd[] = { "pactl", "set-source-mute", "1", "toggle", NULL };
 
+static const char **volupcombo[] = { unmutecmd, volupcmd, NULL };
+static const char **voldncombo[] = { unmutecmd, voldncmd, NULL };
 
 static Key keys[] = {
 	/* modifier             key                      function        argument */
@@ -109,8 +112,8 @@ static Key keys[] = {
 	TAGKEYS(                XK_9,                                    8)
 	{ MODKEY|ShiftMask,     XK_r,                    self_restart,   {0} },
 	{ MODKEY|ShiftMask,     XK_e,                    quit,           {0} },
-	{ 0,                    XF86XK_AudioRaiseVolume, spawn,          {.v = volupcmd } },
-	{ 0,                    XF86XK_AudioLowerVolume, spawn,          {.v = voldncmd } },
+	{ 0,                    XF86XK_AudioRaiseVolume, spawnmultiple,  {.v = volupcombo } },
+	{ 0,                    XF86XK_AudioLowerVolume, spawnmultiple,  {.v = voldncombo } },
 	{ 0,                    XF86XK_AudioMute,        spawn,          {.v = mutecmd } },
 	{ 0,                    XF86XK_AudioMicMute,     spawn,          {.v = micmutecmd } },
 };
