@@ -22,7 +22,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -33,6 +33,8 @@ static const Rule rules[] = {
 	{ "Gimp",            NULL,          NULL,       0,            1,           -1 },
 	{ "Emacs",           NULL,          NULL,       1 << 1,       0,           -1 },
 	{ "Vivaldi-stable",  NULL,          NULL,       1 << 2,       0,           -1 },
+        { "ownCloud",        NULL,          NULL,       1 << 7,       1,           -1 },
+        { "Clementine",      NULL,          NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
